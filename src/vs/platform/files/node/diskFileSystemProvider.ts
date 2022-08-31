@@ -259,10 +259,10 @@ export class DiskFileSystemProvider extends AbstractDiskFileSystemProvider imple
 
 	private readonly writeHandles = new Map<number, URI>();
 
-	private static canFlush: boolean = true;
+	private static canFlush: boolean = false;
 
 	static configureFlushOnWrite(enabled: boolean): void {
-		DiskFileSystemProvider.canFlush = enabled;
+		DiskFileSystemProvider.canFlush = false;
 	}
 
 	async open(resource: URI, opts: IFileOpenOptions): Promise<number> {

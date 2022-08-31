@@ -389,9 +389,9 @@ interface IEnsuredWriteFileOptions extends IWriteFileOptions {
 	flag: string;
 }
 
-let canFlush = true;
+let canFlush = false;
 export function configureFlushOnWrite(enabled: boolean): void {
-	canFlush = enabled;
+	canFlush = false;
 }
 
 // Calls fs.writeFile() followed by a fs.sync() call to flush the changes to disk
